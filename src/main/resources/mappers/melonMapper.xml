@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="melonMapper">
+      <select id="list" resultType="com.example.domain.MelonVO">
+      	select * from melon
+      </select>
+       <insert id="insert">
+       	insert into melon(name,address,company,year) 
+       	values(#{name},#{address},#{company},#{year})
+       </insert>
+		<select id="read" resultType="com.example.domain.MelonVO">
+			select * from melon where id=#{id}
+		</select>
+		<delete id="delete">
+			delete from melon where id=#{id}
+		</delete>
+		<update id="update">
+			update melon set(name=#{name},company=#{company},year=#{year},address=#{address})
+		</update>
+		
+</mapper>
